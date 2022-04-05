@@ -17,18 +17,15 @@ public class User {
 	private String password;
 
 	@OneToOne(mappedBy = "user") // 1:1
+	private Customer customer;
+
+	@OneToOne(mappedBy = "user") // 1:1
 	private ShopOwner shopOwner;
 
+//	@OneToOne(mappedBy = "user") // 1:1
+//	private MallAdmin mallAdmin;
+
 	/* ------------------- GS------------------- */
-
-	@JsonBackReference
-	public ShopOwner getShopOwner() {
-		return shopOwner;
-	}
-
-	public void setShopOwner(ShopOwner shopOwner) {
-		this.shopOwner = shopOwner;
-	}
 
 	public Integer getUserId() {
 		return userId;
@@ -63,13 +60,35 @@ public class User {
 	}
 
 	@JsonBackReference
-	public ShopOwner getAdmin() {
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
+	@JsonBackReference
+	public ShopOwner getShopOwner() {
 		return shopOwner;
 	}
 
-	@Override
-	public String toString() {
-		return "User [userId=" + userId + ", name=" + name + ", type=" + type + ", password=" + password + "]";
+	public void setShopOwner(ShopOwner shopOwner) {
+		this.shopOwner = shopOwner;
 	}
+
+//	@JsonBackReference
+//	public MallAdmin getMallAdmin() {
+//		return mallAdmin;
+//	}
+//
+//	public void setMallAdmin(MallAdmin mallAdmin) {
+//		this.mallAdmin = mallAdmin;
+//	}
+
+//	@Override
+//	public String toString() {
+//		return "User [userId=" + userId + ", name=" + name + ", type=" + type + ", password=" + password + "]";
+//	}
 
 }

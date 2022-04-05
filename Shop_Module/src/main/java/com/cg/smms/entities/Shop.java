@@ -24,17 +24,17 @@ public class Shop {
 	@OneToOne(mappedBy = "shop") // 1:1
 	private ShopOwner shopOwner;
 
-//	@OneToMany(mappedBy = "shop", cascade = CascadeType.ALL) // 1:M
-//	private List<Employee> employee = new ArrayList<>();// employee
-//
-//	@OneToMany(mappedBy = "shop", cascade = CascadeType.ALL) // 1:M
-//	private List<Item> items = new ArrayList<>();// items
+	@OneToMany(mappedBy = "shop", cascade = CascadeType.ALL) // 1:M
+	private List<Employee> employee = new ArrayList<>();// employee
+
+	@OneToMany(mappedBy = "shop", cascade = CascadeType.ALL) // 1:M
+	private List<Item> items = new ArrayList<>();// items
 //
 //	@OneToMany(mappedBy = "shop", cascade = CascadeType.ALL) // 1:M
 //	private List<Order> orders = new ArrayList<>();// orders
-//
-//	@OneToMany(mappedBy = "shop", cascade = CascadeType.ALL) // 1:M
-//	private List<Customer> customer = new ArrayList<>();// customers
+
+	@OneToMany(mappedBy = "shop", cascade = CascadeType.ALL) // 1:M
+	private List<Customer> customer = new ArrayList<>();// customers
 
 //	@ManyToOne // M:1
 //	@JoinColumn(name = "mallId") // FK
@@ -91,24 +91,24 @@ public class Shop {
 		this.shopOwner = shopOwner;
 	}
 
-//	@JsonBackReference
-//	public List<Employee> getEmployee() {
-//		return employee;
-//	}
-//
-//	public void setEmployee(List<Employee> employee) {
-//		this.employee = employee;
-//	}
-//
-//	@JsonBackReference
-//	public List<Item> getItems() {
-//		return items;
-//	}
-//
-//	public void setItems(List<Item> items) {
-//		this.items = items;
-//	}
-//
+	@JsonBackReference
+	public List<Employee> getEmployee() {
+		return employee;
+	}
+
+	public void setEmployee(List<Employee> employee) {
+		this.employee = employee;
+	}
+
+	@JsonBackReference
+	public List<Item> getItems() {
+		return items;
+	}
+
+	public void setItems(List<Item> items) {
+		this.items = items;
+	}
+
 //	@JsonBackReference
 //	public List<Order> getOrders() {
 //		return orders;
@@ -117,15 +117,15 @@ public class Shop {
 //	public void setOrders(List<Order> orders) {
 //		this.orders = orders;
 //	}
-//
-//	@JsonBackReference
-//	public List<Customer> getCustomer() {
-//		return customer;
-//	}
-//
-//	public void setCustomer(List<Customer> customer) {
-//		this.customer = customer;
-//	}
+
+	@JsonBackReference
+	public List<Customer> getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(List<Customer> customer) {
+		this.customer = customer;
+	}
 //
 //	@JsonManagedReference
 //	public Mall getMall() {
